@@ -1,0 +1,135 @@
+.container {
+    width: 50%;
+    margin: 5rem auto;
+    background: white;
+    padding: 40px;
+    position: relative;
+    box-shadow: 0px -1px 20px 0px #2c27273b;
+}
+.title {
+	text-align: left;
+    margin: auto;
+    padding: 1rem 0;
+    width: 80%;
+}
+.title::after{
+    content: "";
+    display: block;
+    width: 15rem;
+    height: 0.25rem;
+    background-color: #324864;
+    margin-top: 0.4rem;
+}
+form{
+    display: flex;
+	flex-direction: column;
+    margin: 1rem 0;
+    padding: 1rem 0.5rem;
+    box-shadow:1px 1px 18px 1px #00000029
+}
+.form-group{
+    display: flex;
+    width: 80%;
+    position: relative;
+    margin: 1.4em auto 0 auto;
+}
+.form-group p{
+    overflow-wrap: break-word;
+
+}
+.invalid{
+    width: 80%;
+    margin: auto;
+}
+.input-group-text{
+    display: block;
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    padding: 0 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 0;
+    color:#a7afaf;
+  }
+.form-control{
+    display: inline-block;
+    width: 100%;
+    padding: 12px 20px 12px 50px;
+    color: #000;
+    font-weight: 300;
+    box-shadow: none;
+    border-radius: 0.25em;
+    border: 1px solid #d2d8d8;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.25);
+    outline: none;
+
+}
+.resetbtn,.registerbtn,.loginbtn{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background: #324864;
+    color: white;
+    font-family: 'baloo';
+    border-radius: 0.25rem;
+    font-size: 15px;
+    line-height: 1;
+    color: white;
+    padding: 0 0.4rem;
+    cursor: pointer;
+}
+.loading::before{
+    display: block;
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    content: "";
+    width: 65px;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translate(-50%,-50%);
+    background-image: url(../../../../assets/images/Spinner.svg);
+}
+.form-link{
+    width: 80%;
+    display: block;
+    margin: auto;
+}
+.message{
+    display: block;
+    width: fit-content;
+    margin: auto;
+}
+.submitform{
+    width: fit-content;
+    justify-content: center;
+    background-color: var(--main-color);
+    color: white;
+    padding: 0.7rem;
+    border-radius: 5px;
+    margin: 0.5rem auto;
+}
+@media screen and (max-width:400px) {
+    form{
+        box-shadow:none
+    }
+    
+}
+@media screen and (max-width: 700px){
+    .container{
+        width: 90%;
+    }
+}
+@media screen and (max-width: 900px){
+    .container{
+        width: 80%;
+    }
+}

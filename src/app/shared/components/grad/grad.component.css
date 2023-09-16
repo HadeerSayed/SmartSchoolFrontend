@@ -1,0 +1,55 @@
+.latefees{
+    text-align: center;
+    margin-top : 2rem;
+    font-size: 2rem;
+}
+
+section{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+header,main{
+    width: 100%;
+}
+.result{
+    padding-top: 3rem;
+}
+.result ul{
+    width: 90%;
+    overflow-x: auto;
+    display: flex;
+    margin: auto;
+    
+}
+select{
+    padding:0.3rem 2rem
+}
+.result header ul,.stdinfo div:nth-child(1) ul li{
+    font-weight: 800;
+}
+.result header ul{
+    color: white;
+    background-color: #324864;
+}
+.result ul li{
+    width: calc(90% / 4);
+    list-style-type: none;
+    padding:0.5rem 1rem;
+    text-align: left;
+}
+.stdinfo{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 1rem;
+}
+.stdinfo div ul li{
+    padding: 1rem;
+}

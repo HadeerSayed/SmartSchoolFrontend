@@ -1,0 +1,38 @@
+  span{
+    display: block;
+  }
+  span button{
+    margin:0.5rem;
+    padding: 0.7rem 1.6rem;
+  }
+  .tableheader div,.tablebody div{
+    width: calc(70% / 3)!important;
+}
+.tableheader div:nth-child(4),.tablebody div:nth-child(4),
+.tableheader div:nth-child(2),.tablebody div:nth-child(2){
+  width: 15%!important;
+}
+button {
+  padding: 10px 10px;
+}
+
+@media (max-width:853px){
+  .tableheader{
+    display: none!important;
+  }
+  .tablebody{
+    display: block!important;
+  }
+  .tablebody div,.tablebody div:nth-child(2){
+    width: 100%!important;
+    text-align: center!important;
+  }
+  .tablebody div:nth-child(4),
+  .tablebody div:nth-child(3){
+    display: none!important;
+  }
+  .header,.header span {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,66 @@
+.table{
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    background-color: #fafafa;
+    width: 95%;
+    margin: auto;
+    height: 65vh;
+    overflow-y: auto;
+}
+.table::-webkit-scrollbar{
+    width: 5px;
+}
+.tablebody{
+    display: flex;
+    box-shadow: 1px 1px 1px 1px #00000042;
+    background-color: #a9a9a91a;;
+    padding: 0.3rem 0.5rem;
+    margin: 1rem 3rem;
+    cursor: pointer;
+}
+
+.tablebody div:nth-child(1){
+    margin-top: 0.2rem;
+    width: 60px!important;
+    position: relative;
+}
+.tablebody div:nth-child(1) img{
+    display: block;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.tablebody div:nth-child(2){
+    width:calc(100% - 60px)!important;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.tablebody:hover{
+    background-color: aliceblue;
+}
+.notfoundbody{
+    box-shadow: 1px 1px 1px 1px #00000042;
+    padding: 1rem 0.5rem;
+    margin: 1rem 2rem;
+    text-align: center;
+}
+.tableheader div,.tablebody div{
+    width: calc(100% / 3);
+    line-height: 3;
+}
+.data{
+    height: 65vh;
+    overflow-y: auto;
+}
+.data::-webkit-scrollbar{
+    width: 5px;
+    background-color: gray;
+}
+.stdimg{
+    display: block;
+    width: 50px;
+    height: 50px;
+}

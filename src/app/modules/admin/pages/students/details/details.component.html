@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="container-wraperr">
+        <header>
+            <div>
+              Student Details
+            </div>
+            <div>
+                <button (click)="close()"><i class="fa-solid fa-close"></i></button>
+            </div>
+        </header>
+        <main>
+          <div class="images">
+            <img [src]="student.studentPhotoUrl"/>
+          </div>
+          <div class="information">
+            <table>
+              <tr>
+                <th>Student name</th>
+                <td>
+                  <p>{{student.studentFirstName}}</p>
+                </td>
+              </tr>
+              <tr>
+                <th>Student Phone</th>
+                <td>
+                  <p>{{student.studentPhone}}</p>
+                </td>
+              </tr>
+              <tr>
+                <th>Student Gender</th>
+                <td>
+                  <p>{{student.gender}}</p>
+                </td>
+              </tr>  
+              <tr>
+                <th>Student Birth Date</th>
+                <td>
+                  <p>{{student.studentBirthDate|date:'yyyy-MM-dd'}}</p>
+                </td>
+              </tr> 
+              <tr>
+                <th>Fees</th>
+                <td>
+                  <p>{{student.fees==true?'yes':'no'}}</p>
+                </td>
+              </tr> 
+              <tr>
+                <th>Class Room</th>
+                <td>
+                  <p>{{student.classRoomName}}</p>
+                </td>
+              </tr> 
+              <tr>
+                <th>Max Day Off</th>
+                <td>
+                  <p>{{student.maxDayOff}}</p>
+                </td>
+              </tr> 
+              <tr>
+                <th>Absence Days</th>
+                <td>
+                  <p>{{student.absenceDays}}</p>
+                </td>
+              </tr>    
+            </table>
+          </div>
+        </main>
+    </div>
+  </div>

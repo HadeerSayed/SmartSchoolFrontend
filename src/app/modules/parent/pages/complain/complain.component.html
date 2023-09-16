@@ -1,0 +1,31 @@
+<form [formGroup]="complain" #form="ngForm" (ngSubmit)="sendcomplain()">
+    <header>
+        <div>
+            <span>From</span>
+            <span>{{parentname}}</span>
+        </div>
+        <div>
+            <span>To</span>
+            <span>{{email}}</span>
+        </div>
+        <div>
+            <span [ngClass]="{'invalid':(subjectcontrol.touched&&subjectcontrol.invalid)||(form.submitted&&subjectcontrol.errors)}">Subject</span>
+            <span>
+                <input type="text" formControlName="subject"/>
+            </span>
+        </div>
+    </header>
+    <main>
+        <textarea formControlName="body" [ngClass]="{'invalid':(bodycontrol.touched&&bodycontrol.invalid)||(form.submitted&&bodycontrol.errors)}"></textarea>
+    </main>
+    <footer>
+        <span >
+            <img src="../../../../../assets/images/Spinner.svg" [ngClass]="{'show':issending}"/>
+        </span>
+        <span class="submitting">
+          <app-messagerespnce [type]="typemessage" [message]="message" class="message"></app-messagerespnce>
+            <i class="fa-solid fa-paper-plane"></i>
+            <input type="submit" value="Send"/>
+        </span>
+    </footer>
+</form>

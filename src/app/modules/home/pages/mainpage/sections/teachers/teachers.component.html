@@ -1,0 +1,165 @@
+<!-- <section class="teacher_section image">
+    <div class="container">
+        <div class="row_header">
+            <div class="teacher_column_container">
+                <h5 class="teacher_custom_heading">Meet Our Staff</h5>
+                <h5 class="teacher_custom_heading teacher_custom_heading2">
+                    Phasellus enim libero, blandit vel sap condimeum
+                </h5>
+                <div class="teacher_header_image">
+                    <figure>
+                        <div>
+                            <img src="assets/images/breck.png" />
+                        </div>
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 teacher_item1">
+                <div class="teacher_item_avatar">
+                    <a href="#">
+                    </a>
+                </div>
+                <div class="teacher_item_content">
+                    <p class="teacher-description">
+                        Her hunger for knowledge and determination to turn information into action has contributed to her most recent success at Rockwell Group, where she led international, award-winning campaigns for heavy-hitting brands, such as Puma, Gucci, and Rolex.
+                    </p>
+                    <div class="teacher_item_name">
+                        <a href="#">
+                            Aden Hezard
+                        </a>
+                    </div>
+                    <div class="teacher_item_class">
+                        Head Of Department
+                    </div>
+                    <div class="teacher_item_socials">
+                        <ul class="teacher_socials_list">
+                            <li class="teacher_item_social">
+                                <a href="#">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li class="teacher_item_social">
+                                <a href="#">
+                                    <i class="fa-brands fa-google-plus"></i>
+                                </a>
+                            </li>
+                            <li class="teacher_item_social">
+                                <a href="#">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 teacher_item2">
+                <div class="teacher_item_avatar">
+                    <a href="#">
+                    </a>
+                </div>
+                <div class="teacher_item_content">
+                    <p class="teacher-description">
+                        Her hunger for knowledge and determination to turn information into action has contributed to her most recent success at Rockwell Group, where she led international, award-winning campaigns for heavy-hitting brands, such as Puma, Gucci, and Rolex.
+                    </p>
+                    <div class="teacher_item_name">
+                        <a href="#">
+                            Aden Hezard
+                        </a>
+                    </div>
+                    <div class="teacher_item_class">
+                        Head Of Department
+                    </div>
+                    <div class="teacher_item_socials">
+                        <ul class="teacher_socials_list">
+                            <li class="teacher_item_social">
+                                <a href="#">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li class="teacher_item_social">
+                                <a href="#">
+                                    <i class="fa-brands fa-google-plus"></i>
+                                </a>
+                            </li>
+                            <li class="teacher_item_social">
+                                <a href="#">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 teacher_item3">
+                <div class="teacher_item_avatar">
+                    <a href="#">
+                    </a>
+                </div>
+                <div class="teacher_item_content">
+                    <p class="teacher-description">
+                        Her hunger for knowledge and determination to turn information into action has contributed to her most recent success at Rockwell Group, where she led international, award-winning campaigns for heavy-hitting brands, such as Puma, Gucci, and Rolex.
+                    </p>
+                    <div class="teacher_item_name">
+                        <a href="#">
+                            Aden Hezard
+                        </a>
+                    </div>
+                    <div class="teacher_item_class">
+                        Head Of Department
+                    </div>
+                    <div class="teacher_item_socials">
+                        <ul class="teacher_socials_list">
+                            <li class="teacher_item_social">
+                                <a href="#">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li class="teacher_item_social">
+                                <a href="#">
+                                    <i class="fa-brands fa-google-plus"></i>
+                                </a>
+                            </li>
+                            <li class="teacher_item_social">
+                                <a href="#">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+    </div>
+    </div>
+</section> -->
+<div class="bigContainer" id="staff">
+    <div class="main-heading">
+        <h2>Our Staff</h2>
+        </div>
+    
+      <owl-carousel-o [options]="customOptions">
+    
+        <ng-container *ngFor="let t of teachers">
+          <ng-template carouselSlide [id]="t.id">
+            <div class="teacherContainer">
+                <div class="teacherImg"><img class="insideImg" [src]="prefix+t.photoUrl" alt="img" draggable="false"></div>
+                <div class="teacherInfo">
+                    <h4>{{t.fullName}}</h4>
+                     <span>Course : {{t.subjectName}}</span>
+                     <p title="{{t.email}}">{{t.email}}</p>  
+                </div>
+            </div>
+            
+          </ng-template>
+        </ng-container>
+    
+      </owl-carousel-o>
+  </div>
+  
+
+
+
+
+

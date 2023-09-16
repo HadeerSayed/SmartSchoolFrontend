@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="container-wraperr">
+        <header>
+            <div>
+              Details
+            </div>
+            <div>
+                <button (click)="close()"><i class="fa-solid fa-close"></i></button>
+            </div>
+        </header>
+        <main>
+          <div class="images">
+            <img [src]="image"/>
+          </div>
+          <div class="information">
+            <table>
+              <tr>
+                <th>name</th>
+                <td>
+                  <p>{{data.fullName}}</p>
+                </td>
+              </tr>
+              <tr>
+                <th>Phone</th>
+                <td>
+                  <p>{{data.phone}}</p>
+                </td>
+              </tr>
+              <tr>
+                <th>Gender</th>
+                <td>
+                  <p>{{data.gender}}</p>
+                </td>
+              </tr>  
+              <tr>
+                <th>Hire Date</th>
+                <td>
+                  <p>{{data.hireDate|date:'yyyy-MM-dd'}}</p>
+                </td>
+              </tr> 
+              <tr>
+                <th>Salary</th>
+                <td>
+                  <p>{{data.salary}}</p>
+                </td>
+              </tr> 
+              <tr>
+                <th>Subject</th>
+                <td>
+                  <p>{{data.subjectName}}</p>
+                </td>
+              </tr> 
+              <tr>
+                <th>Max Day Off</th>
+                <td>
+                  <p>{{data.maxDayOff}}</p>
+                </td>
+              </tr> 
+              <tr>
+                <th>Absence Days</th>
+                <td>
+                  <p>{{data.absenceDays}}</p>
+                </td>
+              </tr>    
+            </table>
+          </div>
+        </main>
+    </div>
+  </div>

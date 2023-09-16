@@ -1,0 +1,111 @@
+.header{
+    display: flex;
+    line-height: 2;
+    padding: 0 2rem;
+    justify-content: space-between;
+}
+button{
+    border-radius: 0;
+    outline: 0;
+    background-color: transparent;
+}
+i{
+    font-size: 20px;
+} 
+.addbtn,.showbtn{
+    padding: 5px 30px;
+    border-radius: 5px;
+    box-shadow: 3px 1px 2px 0 #00000052;
+    color: black;
+    font-weight: 800;
+    background-color: #fcd2b1;
+}
+.showbtn{
+    padding: 0.6rem 1rem;
+    box-shadow: 3px 1px 2px 0 #00000052
+
+}
+.tableheader{
+    display: flex;
+    padding: 0.4rem 2rem;
+    font-weight: 800;
+}
+.tablebody{
+    display: flex;
+    box-shadow: 1px 1px 1px 1px #00000042;
+    background-color: #a9a9a91a;;
+    padding: 0.3rem 0.5rem;
+    margin: 1rem 2rem;
+}
+.tablebody:nth-child(1){
+    margin-top: 0.2rem;
+}
+.tablebody:hover{
+    background-color: aliceblue;
+}
+.notfoundbody{
+    box-shadow: 1px 1px 1px 1px #00000042;
+    padding: 1rem 0.5rem;
+    margin: 1rem;
+    text-align: center;
+}
+.tableheader div,.tablebody div{
+    width: calc(100% / 3);
+    line-height: 3;
+}
+.data{
+    height: 65vh!important;
+    overflow-y: auto!important;
+}
+.data::-webkit-scrollbar{
+    width: 5px;
+    background-color: gray;
+}
+.header2{
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem 2rem;
+}
+.stdimg{
+    display: block;
+    width: 50px;
+      height: 50px;
+      border-radius: 50%;
+}
+select{
+    padding: 0.5rem 1rem;
+}
+.tableheader div:nth-child(1),.tablebody div:nth-child(1){
+    width: 100px!important;
+    line-height: 3;
+    text-align: center;
+  }
+  input[type="text"]{
+    padding: 0.3rem 0;
+  }
+  .actions button{
+      padding: 10px 10px;
+      color: #324864;
+  }
+
+  @media (max-width:650px){
+    .tableheader{
+      display: none!important;
+    }
+    .tablebody{
+      display: block!important;
+    }
+    .tablebody div:nth-child(1),.tablebody div{
+      width: 100%!important;
+      text-align: center!important;
+    }
+    .tablebody div:nth-child(1) img{
+      display: inline-block!important;
+      width: 80px!important;
+      height: 80px!important;
+    }
+    .tablebody div:nth-child(4),
+    .tablebody div:nth-child(3){
+      display: none!important;
+    }
+  }

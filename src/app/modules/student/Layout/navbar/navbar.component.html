@@ -1,0 +1,42 @@
+<input type="checkbox" id="closebtn" (click)="toggle()"/>
+<div class="container" >
+    <nav>
+        <div class="logo"  >
+            <span class="togglebtnsec">
+                <label for="closebtn" >
+                    <i class="fa-solid fa-close"></i>
+                </label>
+            </span>
+            <span (click)="gottohome()">
+                <img src="../../../../../assets/images/logo.svg"/>
+                <!-- <h4>School</h4> -->
+            </span>
+        </div>
+        <ul>
+            <li [ngClass]="{'active':currentpage=='profile'}" (click)="gottopage('profile')">
+                <i class="fa-solid fa-chalkboard-teacher"></i>
+               <span> Profile</span>
+            </li>
+            <li [ngClass]="{'active':currentpage=='schadule'}" (click)="gottopage('schadule')">
+                <i class="fa-solid fa-calendar"></i>
+               <span>Schedule</span>
+            </li>
+            <li [ngClass]="{'active':currentpage=='material'}" (click)="gottopage('material')">
+                <i class="fa-solid fa-book"></i>
+               <span> Materials</span>
+            </li>
+            <li [ngClass]="{'active':currentpage=='grad/firstterm'}" (click)="gottopagewithparamter('grad','firstterm')">
+                <i class="fa-solid fa-square-poll-vertical"></i>
+               <span>First Term Grades</span>
+            </li>
+            <li [ngClass]="{'active':currentpage=='grad/fullyear'}" (click)="gottopagewithparamter('grad','fullyear')">
+                <i class="fa-solid fa-square-poll-vertical"></i>
+               <span>Full Year Grades</span>
+            </li>
+            <li [ngClass]="{'active':currentpage=='changepassword'}" (click)="gottopage('changepassword')">
+                <i class="fa-solid fa-lock"></i>
+               <span>Change Password</span>
+            </li>
+        </ul>
+    </nav>
+</div>

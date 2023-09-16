@@ -1,0 +1,45 @@
+<input type="checkbox" id="closebtn" (click)="toggle()"/>
+<div class="container">
+    <nav>
+        <div class="logo"  >
+            <span class="togglebtnsec">
+                <label for="closebtn" >
+                    <i class="fa-solid fa-close"></i>
+                </label>
+            </span>
+            <span (click)="gottohome()">
+                <img src="../../../../../assets/images/logo.svg"/>
+            </span>
+        </div>
+        <ul>
+            <li [ngClass]="{'active':currentpage=='requests'}" (click)="gottopage('requests')">
+                <i class="fa-solid fa-user"></i>
+               <span> Requests</span>
+            </li>
+            <li [ngClass]="{'active':currentpage=='gradyear'}" (click)="gottopage('gradyear')">
+                <i class="fa-solid fa-graduation-cap"></i>
+               <span> Grade Year</span>
+            </li>
+            <li [ngClass]="{'active':currentpage=='subjects'}" (click)="gottopage('subjects')">
+                <i class="fa-solid fa-book"></i>
+               <span> Subjects</span>
+            </li>
+            <li [ngClass]="{'active':currentpage=='classroom'}" (click)="gottopage('classroom')">
+                <i class="fa-solid fa-child"></i>
+               <span> Class Rooms</span>
+            </li>
+            <li [ngClass]="{'active':currentpage=='teachers'}" (click)="gottopage('teachers')">
+                <i class="fa-solid fa-chalkboard-teacher"></i>
+               <span> Teacher</span>
+            </li>
+            <li [ngClass]="{'active':currentpage=='students'}" (click)="gottopage('students')">
+                <i class="fa-solid fa-child"></i>
+               <span> Students</span>
+            </li>
+            <li [ngClass]="{'active':currentpage=='schadule'}" (click)="gottopage('schadule')">
+                <i class="fa-solid fa-calendar"></i>
+               <span> Schedule</span>
+            </li>
+        </ul>
+    </nav>
+</div>

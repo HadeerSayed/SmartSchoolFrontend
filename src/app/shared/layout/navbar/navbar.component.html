@@ -1,0 +1,58 @@
+<header>
+  <div class="container">
+      <section class="logo">
+        <div>
+            <img src="../../../../assets/images/logo.svg" alt="">
+        </div>
+      </section>
+      <section class="togglesection">
+        <button class="togglebtn" (click)="settogglebar()">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+      </section>
+      <section class="navigation-bar" [ngClass]="{'show':togglebar}">
+        <button class="closebtn" (click)="settogglebar()">
+            <i class="fa-solid fa-close"></i>
+        </button>
+        <nav>
+            <ul>
+                <li (click)="openpage('home')">
+                    Home
+                </li>
+
+                <li (click)="scrollToId('staff')">
+                    Staff
+                </li>
+
+                <li (click)="openpage('home/course')">
+                    Courses
+                </li>
+
+                <li (click)="scrollToId('activities')">
+                    Activities
+                </li>
+
+                <li (click)="scrollToId('contact')">
+                    Contact
+                </li>
+
+                
+
+                <li (click)="openpage('auth/login')" *ngIf="logoutflag">
+                    Login
+                </li>
+                <li (click)="openpage('auth/register')" *ngIf="logoutflag">
+                    Register
+                </li>
+                <li (click)="gotoprofile()" *ngIf="!logoutflag">
+                    Profile
+                </li>
+                <li (click)="logout()" *ngIf="!logoutflag">
+                    Logout
+                </li>
+
+            </ul>
+        </nav>
+      </section>
+  </div>
+</header>

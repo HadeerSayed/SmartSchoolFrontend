@@ -1,0 +1,20 @@
+<ng-container *ngIf="documents.length>0">
+    <div class="table">
+        <div *ngFor="let item of documents" (click)="showdoccument(item)" class="tablebody" title="{{item.Name}}">
+            <div>
+                <img src="../../../../../../assets/images/pdf.svg" class="stdimg"/>
+            </div>
+            <div>
+                {{item.Name}}
+            </div>
+        </div>
+    </div>        
+</ng-container>        
+<ng-container *ngIf="documents.length==0">
+    <div class="notfoundbody">
+        Not Found
+    </div>
+</ng-container>
+<ng-container *ngIf="loader">
+    <app-loader></app-loader>
+</ng-container>

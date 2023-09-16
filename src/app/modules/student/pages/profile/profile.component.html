@@ -1,0 +1,64 @@
+<main>
+    <section class="photo-profile">
+        <div class="image">
+            <img src="{{student?.studentPhotoUrl}}"/>
+            <label (click)="changephoto()"><i class="fa-solid fa-camera"></i></label>
+        </div>
+        <div class="sub-info">  
+            <div>
+                <h3>{{student?.studentFirstName}}</h3>
+                <h4>Class {{student?.classRoomName}}</h4>     
+            </div>    
+        </div>
+    </section>
+    <section class="info-profile">
+        <div>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Phone</th>
+                        <td>{{student?.studentPhone}}</td>
+                    </tr>
+                    <tr>
+                        <th>Fees</th>
+                        <td>{{student?.fees==false?'No':'Yes'}}</td>
+                    </tr>
+                    <tr>
+                        <th>Birth Date</th>
+                        <td>{{student?.studentBirthDate|date:"yyyy-MM-dd"}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Gender</th>
+                        <td>{{student?.gender=='male'?'Boy':'Girl'}}</td>
+                    </tr>
+                    <tr>
+                        <th>MaxDayOff</th>
+                        <td>{{student?.maxDayOff}}</td>
+                    </tr>
+                    <tr>
+                        <th>AbsenceDays</th>
+                        <td>{{student?.absenceDays}}</td>
+                    </tr>
+                </tbody>
+            </table>         
+        </div>
+        <div>
+            <table>
+                <tbody>
+                    <tr>
+                        <th class="table-header">My Subject</th>
+                    </tr>
+                    <tr *ngFor="let item of subject">
+                        <th>{{item.name}}</th>
+                    </tr>
+                </tbody>
+            </table> 
+        </div>
+    </section>
+</main>

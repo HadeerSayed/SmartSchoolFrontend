@@ -1,0 +1,30 @@
+<input type="checkbox" id="closebtn" (click)="toggle()"/>
+<div class="container">
+    <nav>
+        <div class="logo"  >
+            <span class="togglebtnsec">
+                <label for="closebtn" >
+                    <i class="fa-solid fa-close"></i>
+                </label>
+            </span>
+            <span (click)="gottohome()">
+                <img src="../../../../../assets/images/logo.svg"/>
+                <!-- <h4>School</h4> -->
+            </span>
+        </div>
+        <ul>
+            <li [ngClass]="{'active':currentpage=='myson'}" (click)="gottopage('myson')">
+                <i class="fa-solid fa-child"></i>
+               <span>My Sons</span>
+            </li>
+            <li [ngClass]="{'active':currentpage=='complain'}" (click)="gottopage('complain')">
+                <i class="fa-solid fa-comment"></i>
+               <span>Complaint</span>
+            </li>
+            <li [ngClass]="{'active':currentpage=='changepassword'}" (click)="gottopage('changepassword')">
+                <i class="fa-solid fa-lock"></i>
+               <span>Change Password</span>
+            </li>
+        </ul>
+    </nav>
+</div>

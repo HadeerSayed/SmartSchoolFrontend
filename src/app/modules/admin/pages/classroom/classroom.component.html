@@ -1,0 +1,32 @@
+ <div class="header">
+    <h2>Class room</h2>
+    <button (click)="add()" class="addbtn">Add</button>
+</div>
+<ng-container *ngIf="loader">
+    <app-loader></app-loader>
+</ng-container>
+<ng-container *ngIf="!loader&&classrooms.length>0">
+    <div class="tableheader">
+        <div>Name</div>
+        <div>Grade</div>
+        <div>Action</div>
+    </div>
+    <div class="data">
+        <div *ngFor="let item of classrooms" class="tablebody">
+        <div>
+            {{item.name}}
+        </div>
+        <div>
+            {{item.gradeYearName}}
+        </div>
+        <div>
+            <button (click)="delete(item.id)"><i class="fa-solid fa-trash fa-2" style="color: red;"></i></button>
+        </div>
+        </div>
+    </div>  
+</ng-container>        
+<ng-container *ngIf="!loader&&classrooms.length==0">
+    <div class="notfoundbody">
+        Not Found
+    </div>
+</ng-container>

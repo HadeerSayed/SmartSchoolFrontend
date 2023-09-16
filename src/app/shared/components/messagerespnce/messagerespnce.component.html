@@ -1,0 +1,12 @@
+<ng-container *ngIf="type==='success'">
+    <div class="mess-sec">
+        <img src="../../../../assets/images/success.svg"/>
+        <p class="success">{{message}}</p>
+    </div>
+</ng-container>
+<ng-container *ngIf="type==='failed'">
+    <div  class="mess-sec">
+        <img src="../../../../assets/images/failed.svg"/>
+        <p class="failed">{{message}}</p>
+    </div>
+</ng-container>

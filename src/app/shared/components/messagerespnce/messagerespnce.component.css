@@ -1,0 +1,18 @@
+.mess-sec{
+    display: flex;
+    text-align: center;
+    padding: 0 1rem;
+    overflow-wrap: break-word;
+    line-height: 3;
+    justify-content: center;
+}
+.mess-sec img{
+    width: 30px;
+}
+.failed{
+    color:red;
+}
+.success,.failed{
+    text-align: center;
+
+}

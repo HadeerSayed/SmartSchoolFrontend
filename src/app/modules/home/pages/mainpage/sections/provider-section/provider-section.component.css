@@ -1,0 +1,183 @@
+.container{
+    width: 100%;
+}
+.row{
+    display: block;
+}
+.row_header{
+    font-size: 0.875em;
+    display: block;
+}
+.image{
+    width: 100%;
+    height: 100%;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+/*-------------start proviser css-----------------*/
+.provider_section{
+    width: 90%;
+    margin: auto;
+}
+.provider_section,.teacher_section{
+    padding:0 1rem;
+    height: fit-content!important;
+}
+.provider_section>.container{
+    padding: 0px;
+    margin: auto;
+    text-align: center;
+}
+
+.provider_header_icon{
+    display: inline-block;
+    width: 4em;
+    height: 4em;
+    position: relative;
+    line-height: 2.15em!important;
+    box-sizing: content-box;
+}
+.spinner_icon{
+    font-size: 2.15em!important;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1!important;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+span.fa, i.fa {
+    font-family: FontAwesome!important;
+}
+
+.provider_header_title{
+    font-size:1.7375em;
+    line-height: 0.8125em;
+    text-align: center;
+    margin:0;
+    width: 100%;
+    padding: 1rem 0 1rem 2rem;
+    color: black;
+    font-weight: 900;
+}
+.provider_header_body{
+    font-size: 1.125em;
+    color: var(--gray-color);
+    line-height: 1.65em;
+    margin-bottom: 1.25rem !important;
+}
+.space{
+    height: 1.8rem;
+}
+.col-4{
+    width: 100%;
+}
+.c1,.c2,.c3,.c4,.c5,.c6{
+    margin-bottom: 1.95rem;
+}
+.icon-wrap{
+    display: inline-block;
+    margin-bottom: 1.25rem;
+    width: 178px;
+    height: 150px;
+    line-height: 10rem;
+    background-size: cover;
+}
+.c1 .icon-wrap{
+    background-image: url('../../../../../../../assets/images/what-we-provide-container5.png');
+}
+.c2 .icon-wrap{
+    background-image: url('../../../../../../../assets/images/what-we-provide-container4.png'); 
+}
+.c3 .icon-wrap{
+    background-image: url('../../../../../../../assets/images/what-we-provide-container6.png');
+}
+.c4 .icon-wrap{
+    background-image: url('../../../../../../../assets/images/what-we-provide-container1.png');
+}
+.c5 .icon-wrap{
+    background-image: url('../../../../../../../assets/images/what-we-provide-container2.png');
+}
+.c6 .icon-wrap{
+    background-image: url('../../../../../../../assets/images/what-we-provide-container3.png');
+}
+.type-image{
+    width: 40%;
+    margin-left: 4.4rem;
+    margin-bottom: 0.5rem;
+    line-height: 10rem;
+}
+.type-image img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+.provider_box_title{
+    color: var(--black-color);
+    line-height: 1.75rem;
+    font-size: 1.375em;
+    font-family: 'Baloo';
+    font-style: normal;
+    margin-bottom: 0.6rem;
+}
+.provider_box_text{
+    font-family: 'Baloo' !important;
+    font-size: 0.875em;
+    line-height: 1.5rem;
+    color: var(--gray-color);
+    font-weight: 400;
+    display: inline-block;
+    padding: 0px 1.25rem;
+}
+.btn_container{
+    margin: auto;
+}
+.btn{
+    display: inline-block;
+    position: relative;
+    background-color:var(--main-color);
+    border-radius:2rem;
+    padding:1rem 2.875rem 1rem 1.25rem;
+    color: white;
+    font-size: 1.125em;
+    font-family: 'baloo';
+    font-weight: 400;
+}
+.btn .fa-long-arrow-right{
+    padding-left:0.5rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.btn:hover{
+    background-color:var(--secondary-color) ;
+    opacity: 0.8;
+}
+@media (min-width: 768px) {
+    .provider_header_title{
+        font-size:2.7375em;
+        line-height: 0.8125em;
+        text-align: center;
+        margin:1rem 0 2rem 0;
+        width: 100%;
+        padding: 1rem 0 1rem 0;
+        color: black;
+        font-weight: 900;
+    }
+    .provider_section{
+        padding:0 0 5rem 0rem;
+        overflow: hidden;
+        width: 90%;
+        margin: auto;
+    }
+    .row{
+        display: flex;
+    }
+    .col-4{
+        width: 33.333333333%;
+    }
+}
+

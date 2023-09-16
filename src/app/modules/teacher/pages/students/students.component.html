@@ -1,0 +1,41 @@
+<div class="header">
+    <h2>All Students</h2>
+    <button (click)="takeattandance()" class="addbtn">Take Attandance</button>
+</div>
+<div class="header2">
+    <span>
+        Class
+        <select (change)="getstudents($event)">
+            <option></option>
+            <option *ngFor="let item of classsies" value="{{item.id}}">{{item.gradeYearName}}-{{item.name}}</option>
+        </select>
+    </span>
+</div>
+<ng-container *ngIf="loader">
+    <app-loader></app-loader>
+</ng-container>
+<ng-container *ngIf="!loader&&allstudents.length>0">
+    <div class="tableheader">
+        <div></div>
+        <div>Name</div>
+        <div>Gender</div>
+    </div>
+    <div class="data">
+        <div *ngFor="let item of allstudents;let i=index" class="tablebody">
+            <div>
+                <img src="{{baseUrl}}{{item.studentPhotoUrl}}" class="stdimg"/>
+            </div>
+            <div>
+                {{item.studentFirstName}}
+            </div>
+            <div>
+                {{item.gender}}
+            </div>
+        </div>
+    </div>
+</ng-container>
+<ng-container *ngIf="!loader&&allstudents.length==0">
+    <div class="notfoundbody">
+        Not Found
+    </div>
+</ng-container>

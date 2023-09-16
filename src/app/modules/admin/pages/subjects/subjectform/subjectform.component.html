@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="container-wraperr">
+        <header>
+            <div>
+                Add Subject
+            </div>
+            <div>
+                <button (click)="close()"><i class="fa-solid fa-close"></i></button>
+            </div>
+        </header>
+        <form [formGroup]="subject" #form="ngForm" (ngSubmit)="addsubject()">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" formControlName="subname" class="form-control"
+                [ngClass]="{'is-invalid':(namecontrol.errors&&namecontrol.touched)||(namecontrol.errors&&form.submitted)}"/>
+                <div *ngIf="(namecontrol.errors&&form.submitted)||(namecontrol.errors&&namecontrol.touched)" class="invalid">
+                    <p *ngIf="namecontrol.errors['required']" class="invalid-feedback">name is required</p>
+                    <p *ngIf="namecontrol.errors['minlength']" class="invalid-feedback">minlength is 3 char</p>
+                    <p *ngIf="namecontrol.errors['maxlength']" class="invalid-feedback">minlength is 15 char</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Grade year</label>
+                <select  formControlName="gradeYearId" class="form-control"
+                [ngClass]="{'is-invalid':(gradecontrol.errors&&gradecontrol.touched)||(gradecontrol.errors&&form.submitted)}">
+                    <option *ngFor="let item of gradeyears" value="{{item.id}}">{{item.name}}</option>
+                </select>
+                <div *ngIf="(gradecontrol.errors&&form.submitted)||(gradecontrol.errors&&gradecontrol.touched)" class="invalid">
+                    <p *ngIf="gradecontrol.errors['required']" class="invalid-feedback">grade year is required</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Total Mark</label>
+                <input type="text" formControlName="TotalMark" class="form-control"
+                [ngClass]="{'is-invalid':(TotalMarkcontrol.errors&&TotalMarkcontrol.touched)||(TotalMarkcontrol.errors&&form.submitted)}"/>
+                <div *ngIf="(TotalMarkcontrol.errors&&form.submitted)||(TotalMarkcontrol.errors&&TotalMarkcontrol.touched)" class="invalid">
+                    <p *ngIf="TotalMarkcontrol.errors['required']" class="invalid-feedback">Total mark is required</p>
+                    <p *ngIf="TotalMarkcontrol.errors['pattern']" class="invalid-feedback">must be number/not start with zero</p>
+                </div>
+            </div>
+            <div class="form-group submit">
+                <span [ngClass]="{'success':mess=='Success','failed':mess!='Success'}">{{mess}}</span>
+                <ng-container *ngIf="!loader">
+                    <input type="submit" value="Submit" class="btn"/>
+                </ng-container>
+                <ng-container *ngIf="loader">
+                    <app-loader></app-loader>
+                </ng-container>
+            </div>
+        </form>
+    </div>
+</div>

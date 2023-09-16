@@ -1,0 +1,24 @@
+<ng-container *ngIf="isauthorized&&!load">
+    <div class="container">
+        <div class="header success">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        <div class="message">
+            <p>
+                Your Email is confirmed
+            </p>
+        </div>
+    </div>
+</ng-container>
+<ng-container *ngIf="!isauthorized&&!load">
+    <div class="container">
+        <div class="header failed">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="message">
+            <p>
+                Your Email is not confirmed
+            </p>
+        </div>
+    </div>
+</ng-container>

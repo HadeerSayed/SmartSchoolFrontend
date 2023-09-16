@@ -1,0 +1,9 @@
+
+.container-wraperr{
+    width: 500px!important;
+    height: 65vh!important;
+}
+
+.submit{
+  display: flex;
+}

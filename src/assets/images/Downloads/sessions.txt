@@ -1,0 +1,39 @@
+get sessions by classid and date 
+//api
+        [HttpGet]
+        [Route("Getsessions/classanddate/{classid}/{date}")]
+        public IActionResult GetByClassDate(int classid, DateTime date)
+        {
+            try
+            {
+                var mySchedule = SessionRepo.GetByGradeClassDate(classid, date);
+                if (mySchedule == null)
+                {
+                    return NotFound();
+                }
+                return Ok(mySchedule);
+            }
+
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+//interface
+        public IEnumerable<SessionVM> GetByGradeClassDate(int classid, DateTime date);
+
+//implementation
+        public IEnumerable<SessionVM> GetByGradeClassDate(int classid,DateTime date)
+        {
+            var mySchedule =Db.Sessions.Include(p=>p.Schedule).Include(p => p.Teacher).ThenInclude(p=>p.Subject).Where(r => r.Schedule.ClassId == classid && r.Schedule.Day == date).Select(obj => new SessionVM()
+            {
+                Id = obj.Id,
+                TeacherID=obj.Teacher.Id,
+                ScheduleDay = obj.Schedule.Day.ToString(),
+                ScheduleID=obj.Schedule.Id,
+                SessionNo= obj.SessionNo,
+                SubjectName= obj.Teacher.Subject.Name,
+                TeacherName= obj.Teacher.FullName
+            }).ToList();
+            return mySchedule;
+        }

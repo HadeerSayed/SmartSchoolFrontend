@@ -1,0 +1,39 @@
+<div class="header">
+    <h2>Requests</h2>
+</div>
+<ng-container *ngIf="loader">
+    <app-loader></app-loader>
+</ng-container>
+<ng-container *ngIf="!loader&&allRequests.length>0">
+    <div class="tableheader">
+        <div></div>
+        <div>Student Name</div>
+        <div>student gender</div>
+        <div>Parent Name</div>
+        <div></div>
+    </div>
+    <div class="data">
+        <div *ngFor="let item of allRequests" class="tablebody">
+        <div>
+            <img src="{{baseUrl}}{{item.studentPhotoUrl}}" class="stdimg"/>
+        </div>
+        <div>
+            {{item.studentFirstName}}
+        </div>
+        <div>
+            {{item.studentGender}}
+        </div>
+        <div title="{{item.parentFullName}}">
+            {{item.parentFullName}}
+        </div>
+        <div>
+            <button class="showbtn" (click)="showdetails(item.id)">Show Details</button>
+        </div>
+        </div>
+    </div>
+</ng-container>
+<ng-container *ngIf="!loader&&allRequests.length==0">
+    <div class="notfoundbody">
+        Not Found
+    </div>
+</ng-container>

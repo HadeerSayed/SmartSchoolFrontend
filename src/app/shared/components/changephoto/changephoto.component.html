@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="container-wraperr">
+        <header>
+            <div>
+                Change photo
+            </div>
+            <div>
+                <button (click)="close()"><i class="fa-solid fa-close"></i></button>
+            </div>
+        </header>
+        <main>
+
+                <label for="file">
+                    <i class="fa-solid fa-upload" *ngIf="image==''"></i>
+                    <span *ngIf="image==''">Upload Image</span>
+                    <img [src]="image" *ngIf="image!=''"/>
+                </label>
+                <input type="file" (change)="changephoto($event)" class="file" id="file">
+        </main>
+        <footer>
+            <ng-container *ngIf="loader">
+                <app-loader></app-loader>
+            </ng-container>
+            <ng-container *ngIf="!loader">
+
+            <button class="btn" (click)="save()">Save</button>
+        </ng-container>
+
+        </footer>
+    </div>
+</div>

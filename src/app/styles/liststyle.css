@@ -1,0 +1,42 @@
+.tableheader div:nth-child(1),.tablebody div:nth-child(1){
+  width: 100px!important;
+  line-height: 3;
+  text-align: center;
+}
+input[type="text"]{
+  padding: 0.3rem 0;
+}
+
+select{
+  padding: 0.5rem 1rem;
+}
+.header2{
+  margin:1rem 2rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.actions button{
+  padding: 10px 10px;
+}
+  @media (max-width:700px){
+    .tableheader{
+      display: none!important;
+    }
+    .tablebody{
+      display: block!important;
+    }
+    .tablebody div:nth-child(1),.tablebody div{
+      width: 100%!important;
+      text-align: center!important;
+    }
+    .tablebody div:nth-child(1) img{
+      display: inline-block!important;
+      width: 80px!important;
+      height: 80px!important;
+    }
+    .tablebody div:nth-child(4),
+    .tablebody div:nth-child(3){
+      display: none!important;
+    }
+  }

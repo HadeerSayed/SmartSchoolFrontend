@@ -1,0 +1,155 @@
+*{
+    overflow: hidden;
+}
+.container-wraperr{
+    width: 90vw;
+    height: 95vh;
+}
+.container-wraperr::-webkit-scrollbar{
+    width: 0px;
+}
+main{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    margin: 1rem auto;
+    justify-content: space-evenly;
+}
+.images{
+    display: flex;
+    width: 45%;
+}
+.images div:nth-child(1),.images div:nth-child(3){
+    width: 10%;
+}
+.images div:nth-child(2){
+    width: 80%;
+}
+.images div:nth-child(2) img{
+    display: block;
+    width: 100%;
+    height:600px;
+} 
+.information{
+    width: 45%;
+}
+.images div:nth-child(1) button,.images div:nth-child(3) button{
+    display: block;
+    background-color: transparent;
+    height: 100%;
+    color: black;
+    border-radius: 0;
+}
+main div:nth-child(1) img{
+    display: block;
+    width: 90%;
+}
+table{
+    text-align: left;
+    display: block;
+    width: 80%;
+    margin: auto;
+}
+table tr td,table tr th{
+    width: 200px;
+}
+table tr td{
+    padding-left:1rem ;
+}
+table tr td select{
+    padding: 0.5rem 0.3rem;
+}
+table tr th{
+    padding: 1rem;
+    background-color: black;
+    color: white;
+    font-weight: 700;
+    border-bottom: 1px solid white;
+}
+.rowbtn{
+    display: flex;
+    justify-content:center; 
+    padding:0px ; 
+    margin:0.4rem 0;
+
+}
+.btnaccept{
+    border-radius: 0;
+    background-color: green;
+    margin: 0 0.3rem;
+    padding: 0.7rem 1.6rem;
+    box-shadow: 1px 1px 1px 1px #0000004d;
+    border-radius: 10px;
+    outline: none;
+}
+.btnrefuse{
+    border-radius: 0;
+    background-color: rgb(143, 4, 4);
+    margin: 0 0.3rem;
+    padding: 0.7rem 1.6rem;
+    box-shadow: 1px 1px 1px 1px #0000004d;
+    border-radius: 10px;
+    outline: none;
+}
+@media (max-width:1000px){
+    main{
+        display: block!important;
+    }
+    .images{
+        display: flex;
+        width: 100%;
+        margin: 1rem 0;
+    }
+    .images div:nth-child(1),.images div:nth-child(3){
+        width: 10%;
+    }
+    .images div:nth-child(2){
+        width: 80%;
+        margin: auto;
+    }
+    .images div:nth-child(2) img{
+        display: block;
+        width: 80%;
+        height:600px;
+        margin: auto;
+    } 
+    .information{
+        width: 80%;
+        margin: auto;
+
+    }
+    .rowbtn{
+        margin-bottom:1rem ;
+    }
+}
+@media (max-width:600px){
+    main{
+        display: block!important;
+    }
+    .images{
+        display: flex;
+        width: 100%;
+        margin: 1rem 0;
+    }
+    .images div:nth-child(1),.images div:nth-child(3){
+        width: 10%;
+    }
+    .images div:nth-child(2){
+        width: 80%;
+        margin: auto;
+    }
+    .images div:nth-child(2) img{
+        display: block;
+        width: 100%;
+        height:600px;
+        margin: auto;
+    } 
+    .information{
+        width: 100%;
+        margin: auto;
+
+    }
+    .rowbtn{
+        margin-bottom:1rem ;
+    }
+}

@@ -1,0 +1,61 @@
+<section>
+    <!-- <ng-container *ngIf="student.fees"> -->
+        <ng-container *ngIf="loader">
+            <app-loader></app-loader>
+        </ng-container>
+        <ng-container *ngIf="!loader">
+        <section class="stdinfo">
+            <div>
+                <ul>
+                    <li>Name</li>
+                    <li>class</li>
+                    <li *ngIf="resultype=='firstterm'">Year</li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>{{student.studentFirstName}}</li>
+                    <li>{{student.classRoomName}}</li>
+                    <li *ngIf="resultype=='firstterm'">{{year}}</li>
+                </ul>
+            </div>
+        </section>
+        <div class="header2" *ngIf="resultype=='fullyear'">
+            <span>
+                grade year
+                <select (change)="getresult($event)">
+                    <option></option>
+                    <option *ngFor="let item of gradyear;let i=index" value="{{item.id}}">{{item.name}}</option>
+                </select>
+            </span>
+        </div>
+            <section class="result">
+                <header>
+                    <ul>
+                        <li>Subject</li>
+                        <li>Mark</li>
+                        <li>Total Mark</li>
+                        <li>Passed</li>
+                        <li *ngIf="resultype=='fullyear'">Year</li>
+                    </ul>
+                </header>
+                <ng-container *ngIf="examresult.length==0&&student.fees==false">
+                    <p class="latefees">Kindly Pay Your Fees!</p>
+                </ng-container>
+                <ng-container *ngIf="examresult.length==0&&student.fees==true">
+                    <p class="latefees">Result in progress...</p>
+                </ng-container>
+                <main>
+                    <ul *ngFor="let item of examresult">
+                        <li>{{item.subjectName}}</li>
+                        <li *ngIf="resultype=='firstterm'">{{item.firstTermGrade}}</li>
+                        <li *ngIf="resultype=='fullyear'">{{item.total}}</li>
+                        <li>{{item.totalSubjectMark}}</li>
+                        <li>{{item.passed==false?'No':'Yes'}}</li>
+                        <li *ngIf="resultype=='fullyear'">{{item.year}}</li>
+                    </ul>
+                </main>
+            </section>
+        </ng-container>
+
+</section>

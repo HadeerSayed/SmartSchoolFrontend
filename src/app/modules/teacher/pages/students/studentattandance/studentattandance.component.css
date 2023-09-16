@@ -1,0 +1,48 @@
+.container-wraperr{
+    height: 70vh!important;
+    overflow: hidden!important;
+ }
+ .data{
+    height: 35vh!important;
+    overflow-y: auto;
+ }
+ .tablebody div:nth-child(1),
+  .tableheader div:nth-child(1)
+  {
+    width: 70%!important;
+  }
+  .tablebody div:nth-child(2),
+  .tableheader div:nth-child(2){
+    width: 30%!important;
+  }
+  .save{
+    text-align: right;
+    padding: 0 2rem;
+  }
+  .save button{
+    border-radius: 0;
+    background-color: green;
+    margin: 0 0.3rem;
+    padding: 0.7rem 1.6rem;
+    box-shadow: 1px 1px 1px 1px #0000004d;
+    border-radius: 10px;
+  }
+  header div:nth-child(2) button {
+    padding: 0.2rem 0!important;
+}
+.header2{
+  display: flex;
+  justify-content: center;
+}
+.header2 span select{
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+}
+@media (max-width:500px){
+  .tableheader{
+    display: none!important;
+  }
+  .tablebody{
+  margin-top: 0.4rem!important;
+}
+}

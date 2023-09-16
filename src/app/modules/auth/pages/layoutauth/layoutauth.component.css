@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+    width: 100%!important;
+    background:white;
+    margin: 0!important;
+    border-radius: 0!important;
+    padding:1rem 0px;
+    position: relative;
+    box-shadow: 0 0 0 0 transparent!important;
+    position: relative;
+    height:calc(100% - 5.5rem);
+    overflow-y: auto;
+}
+.application{
+    width: 60%;
+    height: fit-content;
+    margin: auto;
+}
+.closesection{
+    text-align: right;
+}
+.closesection button{
+    background-color: transparent;
+    border-radius: 0;
+    color: black;
+    font-size: 1.5em;
+}
+@media (max-width:850px){
+    .application{
+        width: 70%;
+    }
+    .formbackground{
+        width: 30%;
+    }
+}
+@media (max-width:400px){
+    .application{
+        width: 100%;
+    }
+    .formbackground{
+        width: 0%;
+    }
+}

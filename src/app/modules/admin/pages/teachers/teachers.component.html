@@ -1,0 +1,45 @@
+ <div class="header">
+    <h2>Teachers</h2>
+    <span>
+        <button (click)="add()" class="addbtn">Add</button>
+        <button (click)="takeattandance()" class="addbtn">Take Attandance</button>
+    </span>
+</div>
+<ng-container *ngIf="loader">
+    <app-loader></app-loader>
+</ng-container>
+<ng-container *ngIf="!loader&&teachers.length>0">
+    <div class="tableheader">
+        <div>Name</div>
+        <div>subject</div>
+        <div>absence Days</div>
+        <div>salary</div>
+        <div>Action</div>
+    </div>
+    <div class="data">
+        <div *ngFor="let item of teachers" class="tablebody">
+        <div>
+            {{item.fullName}}
+        </div>
+        <div>
+            {{item.subjectName}}
+        </div>
+        <div>
+            {{item.absenceDays}}
+        </div>
+        <div>
+            {{item.salary}}
+        </div>
+        <div>
+            <button (click)="showdetails(item)"><i class="fa-solid fa-display fa-2" style="color: #e7840e;"></i></button>
+            <button (click)="update(item)"><i class="fa-solid fa-edit fa-2" style="color: green;"></i></button>
+            <button (click)="delete(item.id)"><i class="fa-solid fa-trash fa-2" style="color: red;"></i></button>
+        </div>
+        </div>
+    </div>  
+</ng-container>        
+<ng-container *ngIf="!loader&&teachers.length==0">
+    <div class="notfoundbody">
+        Not Found
+    </div>
+</ng-container>

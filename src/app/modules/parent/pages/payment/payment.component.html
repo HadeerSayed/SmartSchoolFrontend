@@ -1,0 +1,84 @@
+<div class="container">
+  <form [formGroup]="payment" #form="ngForm" (ngSubmit)="addpayment()">
+    <div class="row">
+        <div class="col">
+            <h3 class="title">billing address</h3>
+            <div class="inputBox">
+                <span>full name :</span>
+                <span>{{parent?.parentFullName}}</span>
+            </div>
+            <div class="inputBox">
+                <span>Phone :</span>
+                <span>{{parent?.parentPhone}}</span>
+            </div>
+            <div class="inputBox">
+              <span>Amount :</span>
+              <span>{{Amount}}</span>
+          </div>
+        </div>
+        <div class="col">
+            <h3 class="title">payment</h3>
+
+            <div class="inputBox">
+                <span>cards accepted :</span>
+                <img src="../../../../../assets/images/card_img.png" alt="">
+            </div>
+            <div class="inputBox">
+              <span>Card Name</span>
+              <input type="text" formControlName="cardName" class="form-control"
+              [ngClass]="{'is-invalid':(cardnamecontrol.errors&&cardnamecontrol.touched)||(cardnamecontrol.errors&&form.submitted)}"/>
+              <div *ngIf="(cardnamecontrol.errors&&form.submitted)||(cardnamecontrol.errors&&cardnamecontrol.touched)" class="invalid">
+                <p *ngIf="cardnamecontrol.errors['required']" class="invalid-feedback">card name is required</p>
+              </div>
+            </div>
+            <div class="inputBox">
+              <span>Card Number</span>
+              <input type="text" formControlName="cardNumber" class="form-control"
+              [ngClass]="{'is-invalid':(cardnumbercontrol.errors&&cardnumbercontrol.touched)||(cardnumbercontrol.errors&&form.submitted)}"/>
+              <div *ngIf="(cardnumbercontrol.errors&&form.submitted)||(cardnumbercontrol.errors&&cardnumbercontrol.touched)" class="invalid">
+                  <p *ngIf="cardnumbercontrol.errors['required']" class="invalid-feedback">card number is required</p>
+                  <p *ngIf="cardnumbercontrol.errors['pattern']" class="invalid-feedback">card number must be 16 digit</p>
+              </div>
+            </div>
+            <div class="inputBox">
+                <span>Exp Month</span>
+                <input type="text" formControlName="cardExpiryMonth" class="form-control"
+                    [ngClass]="{'is-invalid':(cardexpmonthcontrol.errors&&cardexpmonthcontrol.touched)||(cardexpmonthcontrol.errors&&form.submitted)}"/>
+                <div *ngIf="(cardexpmonthcontrol.errors&&form.submitted)||(cardexpmonthcontrol.errors&&cardexpmonthcontrol.touched)" class="invalid">
+                    <p *ngIf="cardexpmonthcontrol.errors['required']" class="invalid-feedback">month is required</p>
+                    <p *ngIf="cardexpmonthcontrol.errors['pattern']" class="invalid-feedback">month must between 1 to 12 </p>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="inputBox">
+                  <span>Exp Year</span>
+                  <input type="text" formControlName="cardExpiryYear" class="form-control" (change)="validateyear()"
+                    [ngClass]="{'is-invalid':(cardexpyearcontrol.errors&&cardexpyearcontrol.touched)||(cardexpyearcontrol.errors&&form.submitted)}"/>
+                  <div *ngIf="(cardexpyearcontrol.errors&&form.submitted)||(cardexpyearcontrol.errors&&cardexpyearcontrol.touched)" class="invalid">
+                      <p *ngIf="cardexpyearcontrol.errors['required']" class="invalid-feedback">card exp year is required</p>
+                      <p *ngIf="cardexpyearcontrol.errors['invalidyear']" class="invalid-feedback">inavlid card exp year </p>
+                  </div>
+                </div>
+                <div class="inputBox">
+                  <span>Card Cvc</span>
+                  <input type="text" formControlName="cardCvc" class="form-control"
+                    [ngClass]="{'is-invalid':(cardcvccontrol.errors&&cardcvccontrol.touched)||(cardcvccontrol.errors&&form.submitted)}"/>
+                  <div *ngIf="(cardcvccontrol.errors&&form.submitted)||(cardcvccontrol.errors&&cardcvccontrol.touched)" class="invalid">
+                      <p *ngIf="cardcvccontrol.errors['required']" class="invalid-feedback">cvc is required</p>
+                      <p *ngIf="cardcvccontrol.errors['pattern']" class="invalid-feedback">cvc must be 3 digit</p>
+                  </div>
+                </div>
+            </div>
+            <div class="inputBox submit">
+              <span [ngClass]="{'success':mess=='Success','failed':mess!='Success'}">{{mess}}</span>
+              <ng-container *ngIf="loader">
+                <app-loader></app-loader>
+              </ng-container>
+              <ng-container *ngIf="!loader">
+                <input type="submit" value="Submit" class="btn"/>
+              </ng-container>
+            </div>
+        </div>
+    </div>
+  </form>
+</div>

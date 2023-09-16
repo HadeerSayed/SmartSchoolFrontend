@@ -1,0 +1,103 @@
+.row{
+    display: block;
+}
+h5{
+    font-family: 'Baloo';
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+.row_header{
+    font-size: 0.875em;
+    display: block;
+}
+.image{
+    width: 100%;
+    height: 100%;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+footer{
+    background-image: url('../../../../assets/images/footer1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 7.0625rem !important;
+    padding-bottom: 1.75rem !important;
+    color:white;
+    overflow: hidden;
+}
+.footer_col1 .call_info{
+    display: block;
+}
+.call_info_col1,.call_info_col2{
+    width: 100%;
+    display: flex;
+    color: white;
+    padding: 0px 5px 20px 5px;
+}
+.call_info_col3{
+    width: 100%;
+    color: white;
+    display: flex;
+    padding: 10px 5px;
+    margin-bottom: 30px;
+
+}
+footer div>h5:nth-child(1){
+    font-size: 24px;
+    color: var(--main-color-dark);
+    line-height: 22px;
+    text-align: left;
+    font-family: 'Baloo';
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+footer div>h5:nth-child(3){
+    font-size: 17px;
+    color: #dddddd;
+    line-height: 26px;
+    text-align: left;
+    font-family: 'Baloo';
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.call_info_col1 span,.call_info_col2 span,.call_info_col3 span{
+    color: var(--secondary-color);
+    font-size: 25px;
+}
+.call_info_col1 h4,.call_info_col2 h4,.call_info_col3 h4{
+    color: #dddddd;
+    margin-top: 0;
+    line-height: 28px;
+    font-size: 16px !important;
+    margin-left: 10px;
+    font-family: 'Baloo';
+    font-style: normal;
+    font-weight: 400;
+}
+.form_footer{
+    position: relative;
+    margin-bottom: 35px;
+}
+input[type="email"]{
+    display: block;
+    width: 100%;
+    border-radius: 30px;
+    border: 1px solid rgba(53, 53, 53, 0.1);
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    max-width: 100%;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.09);
+    font-size: 14px;
+    line-height: 60px;
+    padding: 10px 130px 10px 30px;
+    color: #fff;
+}
+

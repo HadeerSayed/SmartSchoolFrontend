@@ -1,0 +1,62 @@
+<!--
+<div class="SubjectContainer">
+  <select [(ngModel)]="currentId">
+    <option value="0">Choose Subject</option>
+    <option *ngFor="let grades of allGradeYears" [value]="grades.id" >{{grades.name}}</option>
+  </select>
+  <p>{{currentId}}</p>
+</div> -->
+
+
+
+<div class="container">
+  <div class="select-grade animated" [ngClass]="isChoosed? ' fadeOut left': 'fadeIn'">
+    <h2>Choose Grade Year</h2>
+    <div class="selection">
+      <div class="select animated zoomIn">
+        <input type="radio" name="option">
+        <i class="toggle icon icon-arrow-down"></i>
+        <i class="toggle icon icon-arrow-up"></i>
+        <span class="placeholder">Choose...</span>
+        <label class="option" *ngFor="let grades of allGradeYears">
+          <input type="radio" name="option" [value]="grades.id" (input)="changeGrade($event)" >
+          <span class="title animated fadeIn">{{grades.name}}</span>
+        </label>
+
+      </div>
+      <button (click)="chooseSubjectToggler()">
+        Get Subjects
+      </button>
+    </div>
+  </div>
+
+
+  <div class="subjects animated"  [ngClass]="isChoosed? 'fadeIn': ' fadeOut left'">
+    <button class="back" (click)="chooseSubjectToggler()">
+              <i class="toggle icon icon-arrow-left-circle"></i>
+       Choose another grade
+    </button>
+    <h2>
+      {{currentName}} Grade Subjects
+    </h2>
+    <div class="cards">
+      <div class="card" *ngFor="let subjects of allSubjects">
+        <div class="subject-img">
+          <img src="../../../../../assets/images/book.avif" alt="">
+        </div>
+        <div class="card-body">
+          <p class="subject-name">
+            <span>
+              Subject Name: </span>{{subjects.name}}
+          </p>
+          <p class="teachers">
+            <span>Total Marks: </span>{{subjects.totalMark}}
+          </p>
+        </div>
+      </div>
+
+  </div>
+
+  </div>
+</div>
+

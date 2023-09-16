@@ -1,0 +1,22 @@
+<div class="options">
+    <span (click)="getvideos()" class="videobtn" [ngClass]="{'active':type=='video'}">Videos</span>
+    <span (click)="getdocument()" class="documentbtn" [ngClass]="{'active':type=='document'}">Documents</span>
+</div>
+<ng-container *ngIf="fees">
+    <div class="subjectlist">
+        <select (change)="setsubject($event)">
+            <option *ngFor="let item of subjects;let i=index" value="{{i}}">{{item.name}}</option>
+        </select>
+    </div>
+    <ng-container *ngIf="type=='video'">
+        <app-videos [subjectId]="subjectid"></app-videos>
+    </ng-container>
+    <ng-container *ngIf="type=='document'">
+        <app-documents [subjectId]="subjectid"></app-documents>
+    </ng-container>
+    
+</ng-container>
+
+<ng-container *ngIf="!fees">
+<p class="latefees">Kindly Pay Your Fees!</p>
+</ng-container>

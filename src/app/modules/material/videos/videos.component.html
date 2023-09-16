@@ -1,0 +1,28 @@
+<ng-container *ngIf="loader">
+    <app-loader></app-loader>
+</ng-container>
+<ng-container *ngIf="!loader&&videos.length>0">
+    <section class="table">
+        <div class="video">
+            <video controls  [src]='path'>
+            </video>
+        </div>
+        <div class="videolist">
+            <input type="text" (input)="getfilterlist($event)" placeholder="search" class="form-control"/>
+            <ul>
+                <li *ngFor="let item of tempvideos,let i=index" class="tablebody" (click)="openvideo(i)">
+                    <div></div>
+                    <div title="{{item.Name}}">
+                        {{item.Name}}
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+</ng-container>
+<ng-container *ngIf="!loader&&videos.length==0">
+    <div class="notfoundbody">
+        Not Found
+    </div>
+</ng-container>
+

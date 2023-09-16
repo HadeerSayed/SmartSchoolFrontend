@@ -1,0 +1,14 @@
+<div class="upload-section">
+    <form (ngSubmit)="save()">
+        <span>
+            <label for="file" *ngIf="fullData.file">
+                {{fullData.file?.name}}------{{progress}}%
+            </label>
+            <label for="file" *ngIf="!fullData.file">choose file</label>
+            <app-messagerespnce [type]="typemessage"></app-messagerespnce>
+        </span>
+        <input type="file" class="file" id="file" accept="video/mp4,application/pdf" (change)="uploadFile($event)"/>
+        <input type="submit" value="Upload"/>
+    </form>
+    <p>{{meesage}}</p>
+</div>

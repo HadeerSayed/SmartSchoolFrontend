@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="container-wraperr">
+        <header>
+            <div>
+                Student Attandance
+            </div>
+            <div>
+                <button (click)="close()"><i class="fa-solid fa-close"></i></button>
+            </div>
+        </header>
+        <div class="header2">
+            <span>
+                Class
+                <select (change)="getattantancelist($event)">
+                    <option></option>
+                    <option *ngFor="let item of classies" value="{{item.id}}">{{item.gradeYearName}}-{{item.name}}</option>
+                </select>
+            </span>
+        </div>
+        <ng-container *ngIf="loader">
+            <app-loader></app-loader>
+        </ng-container>
+        <ng-container *ngIf="!loader">
+            <ng-container *ngIf="attantancelist.length>0">
+                <div class="tableheader">
+                    <div>Name</div>
+                    <div>State</div>
+                    <div>Attendence</div>
+                </div>
+                <div class="data">
+                    <div *ngFor="let atten of attantancelist" class="tablebody">
+                        <div>{{atten.studentName}}</div>
+                        <div>{{atten.state==true?'present':'absent'}}</div>
+                        <div><input type="checkbox" [(ngModel)]="atten.state"></div>
+                    </div>
+                </div>  
+                <div class="save">
+                    <button (click)="save()">Save</button>
+                </div>
+            </ng-container>        
+            <ng-container *ngIf="attantancelist.length==0">
+                <div class="notfoundbody">
+                    Not Found
+                </div>
+            </ng-container>
+        </ng-container>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+.container-wraperr{
+    width: 80%!important;
+    overflow: auto!important;
+}
+.container-wraperr::-webkit-scrollbar{
+    width: 0px;
+}
+.schadule-data{
+    display: flex;
+}
+.schadule-data form{
+    width: 40%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.schadule-table{
+    width: 60%;
+}
+.formonly{
+    display: block;
+}
+.formonly form{
+    width: 100%;
+}
+
+.spanError {
+    color : red;
+    margin-left : 0.5rem;
+}
+.container-wraperr2{
+    width: 50vw!important;
+}
+@media(max-width:900px){
+    .schadule-data{
+        display: block;
+    }
+    .schadule-data form{
+        width: 80%;
+        margin: auto;
+    }
+    .schadule-table{
+        width: 100%;
+    }
+}

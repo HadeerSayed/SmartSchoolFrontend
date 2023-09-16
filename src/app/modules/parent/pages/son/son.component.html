@@ -1,0 +1,50 @@
+<div class="header">
+    <h2>My Son</h2>
+</div>
+<ng-container *ngIf="loader">
+    <app-loader></app-loader>
+</ng-container>
+<ng-container *ngIf="!loader&&students.length>0">
+    <div class="tableheader">
+        <div></div>
+        <div>Name</div>
+        <div>Max DayOff</div>
+        <div>Absence Day</div>
+        <div></div>
+    </div>
+    <div class="data">
+        <div *ngFor="let item of students;let i=index" class="tablebody">
+            <div>
+                <img src="{{prefix}}{{item.studentPhotoUrl}}" class="stdimg"/>
+            </div>
+            <div>
+                {{item.studentFirstName}}
+            </div>
+            <div>
+                {{item.maxDayOff}}
+            </div>
+            <div>
+                {{item.absenceDays}}
+            </div>
+            <div class="actions">
+                <button title="schadule" (click)="gotoschadule(item.classRoomID)">
+                    <i class="fa-solid fa-calendar"></i>
+                </button>
+                <button title="first term grade" (click)="gotoresult(item.id,'firstterm')">
+                    <i class="fa-solid fa-square-poll-vertical"></i>
+                </button>
+                <button title="full year grade" (click)="gotoresult(item.id,'fullyear')">
+                    <i class="fa-solid fa-square-poll-vertical"></i>
+                </button>
+                <button title="payment" *ngIf="item.fees == false" (click)="gotopayment(item)">
+                  <i class="fa-solid fa-credit-card"></i>
+              </button>
+            </div>
+        </div>
+    </div>
+</ng-container>
+<ng-container *ngIf="!loader&&students.length==0">
+    <div class="notfoundbody">
+        Not Found
+    </div>
+</ng-container>

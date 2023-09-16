@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="container-wraperr">
+        <header>
+            <div>
+                Add Class Room
+            </div>
+            <div>
+                <button (click)="close()"><i class="fa-solid fa-close"></i></button>
+            </div>
+        </header>
+        <form [formGroup]="classroom" #form="ngForm" (ngSubmit)="addclassroom()">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" formControlName="name" class="form-control"
+                [ngClass]="{'is-invalid':(namecontrol.errors&&namecontrol.touched)||(namecontrol.errors&&form.submitted)}"/>
+                <div *ngIf="(namecontrol.errors&&form.submitted)||(namecontrol.errors&&namecontrol.touched)" class="invalid">
+                    <p *ngIf="namecontrol.errors['required']" class="invalid-feedback">name is required</p>
+                    <p *ngIf="namecontrol.errors['pattern']" class="invalid-feedback">name must be [1-6]/[1-9]</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Grade year</label>
+                <select  formControlName="gradeYearId" class="form-control"
+                [ngClass]="{'is-invalid':(gradecontrol.errors&&gradecontrol.touched)||(gradecontrol.errors&&form.submitted)}">
+                    <option *ngFor="let item of gradeyears" value="{{item.id}}">{{item.name}}</option>
+                </select>
+                <div *ngIf="(gradecontrol.errors&&form.submitted)||(gradecontrol.errors&&gradecontrol.touched)" class="invalid">
+                    <p *ngIf="gradecontrol.errors['required']" class="invalid-feedback">grade year is required</p>
+                </div>
+            </div>
+            <div class="form-group submit">
+                <span [ngClass]="{'success':mess=='Success','failed':mess!='Success'}">{{mess}}</span>
+                <ng-container *ngIf="loader">
+                    <app-loader></app-loader>
+                </ng-container>
+                <ng-container *ngIf="!loader">
+                    <input type="submit" value="Submit" class="btn"/>
+                </ng-container>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+.container-wraperr{
+    width: 50vw!important;
+    height: 90vh!important;
+    overflow: hidden!important;
+}
+form{
+    height: 100%;
+    overflow-y: auto;
+    padding-bottom: 3rem;
+}
+form::-webkit-scrollbar{
+    width: 0;
+}
+.image-sec{
+    text-align: center;
+    display: block;
+}
+.image-sec img{
+    width: 150px;
+    display: block;
+    margin: auto;
+    position: relative;
+}
+input[type="file"]{
+    position: absolute;
+    visibility: hidden;
+} 
+/* .message{
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    background-color: aliceblue;
+} */
+@media screen and (max-width:850px) {
+    .container-wraperr{
+            width: 80vw!important;
+    }
+}

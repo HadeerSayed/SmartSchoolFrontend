@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+  }
+  .container{
+    height: 100%;
+    width: 280px;
+    position: fixed;
+  }
+  nav{
+    height: 100%;
+      width: 280px;
+      overflow:hidden;
+      background-color: #324864;;
+  
+  }
+  .logo{
+      background-color: #eee;
+      padding: 1rem;
+      width: 100%;
+      height: 5.5rem;
+      position: relative;
+      cursor: pointer;
+  }
+  .logo span{
+      display: block;
+      /* width:45%; */
+      width: 100%;
+  }
+  .container .togglebtnsec{
+      display: none;
+      width:100%!important;
+      position: static!important;
+      top: 0px!important;
+      left: 0px!important;
+      transform: translate(0px,0px)!important;
+  }
+  #closebtn{
+      position: absolute;
+      top: -100px;
+  }
+  
+  .logo span img{
+      display: block;
+      width: 100%;
+  }
+  .logo span h4{
+      text-align: center;
+      color: white;
+  }
+  nav ul{
+      max-height: calc(100% - 180px);
+      min-height: fit-content;
+      overflow-y: auto;
+      margin-top: 1rem;
+  }
+  nav ul li{
+      padding: 1rem;
+      font-size: 20px;
+      color: white;
+  
+  }
+  nav ul li i{
+      padding: 0 0.3rem;
+  }
+  .active{
+      background-color: white;
+      border-radius: 10px 0px 0px 10px;
+      margin-left: 15px;
+      color: black!important;
+  }
+  ::-webkit-scrollbar {
+      width: 0px;
+    }
+  input[type="checkbox"]{
+      position: absolute;
+      z-index: -999;
+      visibility: hidden;
+  }
+  .logo label{
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      transform: translate(-50%,-50%);
+      text-align: right;
+      font-size: 25px;
+      padding: 0.5rem 1rem;
+      color: black;
+      cursor: pointer;
+  }
+  .hide nav ul li span{
+      display: none;
+  }
+  .hide{
+      width: 70px;
+  }
+  .hide nav{
+      width: 70px;
+  }
+  .hide nav .logo{
+      visibility: hidden;
+  }
+  nav ul li:hover{
+      cursor: pointer;
+  }
+  @media(max-width:1000px){
+      .container{
+      position: fixed;
+      z-index: 10;
+      width: 100%;
+      background-color: #0000008a;
+      }
+      .togglebtnsec{
+          display: block!important;
+      }
+      .hide,
+      .hide nav{
+          width: 0;
+      }
+  }
+  

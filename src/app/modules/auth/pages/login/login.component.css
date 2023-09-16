@@ -1,0 +1,35 @@
+form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+}
+#fa-eye{
+    position: absolute;
+    z-index: -9999;
+}
+.errmess{
+    display: block;
+    text-align: center;
+    color: rgb(198, 32, 32);
+}
+.togglepassword{
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.form-link{
+    margin-top:0.5rem!important ;
+}
+@media (max-width:850px){
+    form{
+        width: 70%;
+    }
+}
+@media (max-width:400px){
+    form{
+        width: 100%;
+    }
+}

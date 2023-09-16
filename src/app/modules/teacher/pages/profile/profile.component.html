@@ -1,0 +1,69 @@
+<main>
+    <section class="photo-profile">
+        <div class="image">
+            <ng-container *ngIf="loader">
+                <app-loader></app-loader>
+            </ng-container>
+            <ng-container *ngIf="!loader">
+                <img src="{{teacher.photoUrl}}"/>
+                <label (click)="changephoto()"><i class="fa-solid fa-camera"></i></label>
+            </ng-container>
+        </div>
+        <div class="sub-info">  
+            <div>
+                <h3>{{teacher.fullName}}</h3>
+                <h4>{{teacher.subjectName}}</h4>     
+            </div>    
+        </div>
+    </section>
+    <section class="info-profile">
+        <div>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Address</th>
+                        <td>{{teacher.address}}</td>
+                    </tr>
+                    <tr>
+                        <th>Phone</th>
+                        <td>{{teacher.phone}}</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>{{teacher.email}}</td>
+                    </tr>
+                    <tr>
+                        <th>Subject</th>
+                        <td>{{teacher.subjectName}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <span class="edit-sec" (click)="openupdatewindow()">
+                <i class="fa-solid fa-pen" ></i>
+            </span>
+        </div>
+        <div>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Gender</th>
+                        <td>{{teacher.gender}}</td>
+                    </tr>
+                    <tr>
+                        <th>MaxDayOff</th>
+                        <td>{{teacher.maxDayOff}}</td>
+                    </tr>
+                    <tr>
+                        <th>AbsenceDays</th>
+                        <td>{{teacher.absenceDays}}</td>
+                    </tr>
+
+                    <tr>
+                        <th>HireDate</th>
+                        <td>{{teacher.hireDate|date:"yyyy-MM-dd"}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>

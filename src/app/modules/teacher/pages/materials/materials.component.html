@@ -1,0 +1,12 @@
+<div class="options">
+    <span (click)="getvideos()" class="videobtn" [ngClass]="{'active':type=='video'}">Videos</span>
+    <span (click)="getdocument()" class="documentbtn" [ngClass]="{'active':type=='document'}">Documents</span>
+</div>
+<app-uploadfile [subject]="teacher?.subjectId" (reload)="reloadfiles()"></app-uploadfile>
+
+<ng-container *ngIf="type=='video'">
+    <app-videos [subjectId]="teacher?.subjectId" [reloadvideo]="reload"></app-videos>
+</ng-container>
+<ng-container *ngIf="type=='document'">
+    <app-documents [subjectId]="teacher?.subjectId" [reloaddocument]="reload"></app-documents>
+</ng-container>

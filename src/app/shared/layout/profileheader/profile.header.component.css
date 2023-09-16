@@ -1,0 +1,73 @@
+header{
+    width: 95%;
+    height: 3.5rem;
+    margin: 1rem auto;
+    line-height: 2.5rem;
+    vertical-align: middle;
+    padding: 0.5rem 1rem;
+    background-color: #324864;
+    border-radius: 10px;
+    display: flex;
+    color: white;
+    justify-content: space-between;
+}
+#togglebtn{
+    position: absolute;
+    z-index: -9999;
+    visibility: hidden;
+
+}
+label[for="togglebtn"]{
+    cursor: pointer;
+}
+i{
+    font-size: 15px;
+    padding:0 1rem;
+}
+button{
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    outline: 0;
+    padding: 0;
+}
+.logoutsec{
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    width: 20%;
+    color: black;
+}
+.logoutsec label i{
+    color: white!important;
+}
+.logoutsec ul{
+    display: none;
+}
+.logoutsec input{
+    position: absolute;
+    z-index: -1000;
+    color: white;
+    visibility: hidden;
+
+}
+
+.logoutsec input:checked + ul {
+    z-index: 1000;
+    display: block;
+    width: fit-content;
+    margin: 1rem 0 0 0;
+    background-color: white;
+    line-height: 2;
+    box-shadow: 5px 3px 8px 0px #00000026;
+}
+.logoutsec input:checked + ul li{
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.logout{
+  cursor: pointer;
+}

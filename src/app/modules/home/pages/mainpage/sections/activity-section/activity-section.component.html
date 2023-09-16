@@ -1,0 +1,84 @@
+<section id="activities">
+    <div class="container row">
+        <div class="activity-video">
+            <div class="header">
+                <h1>Our Activities</h1>
+                <h4>Children develop skills in five main areas of development:</h4>
+            </div>
+            <div class="video image">
+                    <svg id="play" (click)="start()"  viewBox="0 0 163 163" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px">
+                        <g fill="none">
+                            <g  transform="translate(2.000000, 2.000000)" stroke-width="4">
+                                <path d="M10,80 C10,118.107648 40.8923523,149 79,149 L79,149 C117.107648,149 148,118.107648 148,80 C148,41.8923523 117.107648,11 79,11" id="lineOne" stroke="#0052b7"></path>
+                                <path d="M105.9,74.4158594 L67.2,44.2158594 C63.5,41.3158594 58,43.9158594 58,48.7158594 L58,109.015859 C58,113.715859 63.4,116.415859 67.2,113.515859 L105.9,83.3158594 C108.8,81.1158594 108.8,76.6158594 105.9,74.4158594 L105.9,74.4158594 Z" id="triangle" stroke="#0052b7"></path>
+                                <path d="M159,79.5 C159,35.5933624 123.406638,0 79.5,0 C35.5933624,0 0,35.5933624 0,79.5 C0,123.406638 35.5933624,159 79.5,159 L79.5,159" id="lineTwo" stroke="#0052b7"></path>
+                            </g>
+                        </g>
+                    </svg>
+            </div>
+        </div>
+        <div class="activity-topic">
+            <div class="activity-topic-row">
+                <input type="checkbox" name="activity" id="floortoy"/>
+                <div class="topic-header">
+                    <label for="floortoy">
+                        <h5>
+                            <span  class="topic-icon fa-regular fa-hand-point-right"></span>
+                            Fireplace & Hot Cocoa
+                        </h5>
+                    </label>
+                </div>
+
+                <div class="topic-body">
+                    This one takes a little planning ahead. Pull up a fireplace video from YouTube. Let the kids bring in pillows and favorite books.
+                </div>
+            </div>
+            <div class="activity-topic-row">
+                <input type="checkbox" name="activity" id="sandplay"/>
+                <div class="topic-header">
+                    <label for="sandplay">
+                        <h5>
+                            <span  class="topic-icon fa-regular fa-hand-peace"></span>
+                            Drawing
+                        </h5>
+                    </label>
+                </div>
+                <div class="topic-body">
+                    It doesn’t get any simpler than setting out the crayons, markers, and paper. Add some step by step drawing books if you have any. Let the kids talk and free draw.
+                </div>
+
+            </div>
+            <div class="activity-topic-row">
+                <input type="checkbox" name="activity" id="buildingblocks"/>
+                <div class="topic-header">
+                    <label for="buildingblocks">
+                        <h5>
+                            <span class="fa-solid fa-cubes"></span>
+                            Would You Rather</h5>
+                    </label>
+                </div>
+                <div class="topic-body">
+                    This is a fun game that gets kids up and moving. You ask a question like, “ Would you rather hold a worm or a frog?” The kids move to one of two walls to show their answers. 
+                </div>
+            </div>
+            <div class="activity-topic-row">
+                <input type="checkbox" name="activity" id="outdoor"/>
+                <div class="topic-header">
+                    <label for="outdoor">
+                        <h5>
+                            <span  class="topic-icon fa fa-basketball"></span>
+                            Outdoor
+                        </h5>
+                    </label>
+                </div>
+                <div class="topic-body">
+                    We have many fantastic outdoor activity centres that provide high quality safe activities such as, high ropes, assault courses, bush craft, archery and many more!
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="playvideo" *ngIf="play">
+    <button (click)="close()"><i class="fa fa-close fa-2" style="color: white;"></i></button>
+    <app-video></app-video>
+</div>

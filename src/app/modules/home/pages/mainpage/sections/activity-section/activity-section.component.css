@@ -1,0 +1,110 @@
+section{
+    padding: 100px 0px;
+}
+.row{
+    display: block;
+    width: 90%;
+    margin: auto;
+}
+h5{
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+.row_header{
+    font-size: 0.875em;
+    display: block;
+}
+.image{
+    width: 100%;
+    height: 100%;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+.activity-video .header h1{
+    font-size: 40px;
+    color: #333333;
+    line-height: 44px;
+    text-align: left;
+}
+.activity-video .header h4{
+    font-size: 18px;
+    color: #666666;
+    line-height: 24px;
+    text-align: left;
+}
+.activity-topic-row{
+    position: relative;
+    margin: 1.5rem 0px;
+}
+.activity-topic-row > input[type="checkbox"]{
+    position: absolute;
+    z-index: -5;
+    top:0px;
+}
+.topic-header label h5{
+    background-color: var(--main-color);
+    color: white;
+    padding: 0.6rem;
+    margin: 0px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.topic-header label h5:hover{
+    background-color: var(--secondary-color);
+    color: black;
+}
+.topic-body{
+    display: none;
+}
+input[type="checkbox"]:checked ~ .topic-body{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 1rem 0;
+    padding: 0 1.2rem;
+}
+
+.topic-icon{
+    font-size: 18px;
+    color: #fff;
+    padding: 0.4rem;
+}
+.video{
+    background-image: url(../../../../../../../assets/images/rand2.jpg);
+    position: relative;
+    width: 100%;
+    height: 20rem;
+    margin: 2rem 0;
+}
+
+.playvideo{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.playvideo button{
+    position: absolute;
+    z-index: 999;
+    right: 0;
+    margin: 1rem 1rem 0 0;
+}
+@media (min-width: 768px) {
+    .row{
+        display: flex;
+        justify-content: space-between;
+    }
+    .activity-video{
+        width: 50%;
+    }
+    .activity-topic{
+        width: 40%;
+    }
+
+}

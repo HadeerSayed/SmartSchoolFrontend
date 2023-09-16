@@ -1,0 +1,63 @@
+<div class="header">
+    <h2>All Students</h2>
+    <span>
+        <button (click)="showAbsence()" class="addbtn">Absence</button>
+        <ng-container *ngIf="upgradeloader">
+            <app-loader></app-loader>
+        </ng-container>
+        <ng-container *ngIf="!upgradeloader">
+        <button (click)="upgradestudents()" class="addbtn">
+            Upgrade
+        </button>
+    </ng-container>
+    </span>
+
+</div>
+<div class="header2">
+    <span>
+        grade year
+        <select (change)="getdata()" [(ngModel)]="yearindex">
+            <option *ngFor="let item of gradeyear;let i=index" value="{{i}}">{{item.name}}</option>
+        </select>
+    </span>
+</div>
+<ng-container *ngIf="loader">
+    <app-loader></app-loader>
+</ng-container>
+<ng-container *ngIf="!loader&&allstudents.length>0">
+    <div class="tableheader">
+        <div></div>
+        <div>Name</div>
+        <div>first term</div>
+        <div>second term</div>
+        <div>Class Room</div>
+        <div></div>
+    </div>
+    <div class="data">
+        <div *ngFor="let item of allstudents;let i=index" class="tablebody">
+            <div>
+                <img src="{{baseUrl}}{{item.studentPhotoUrl}}" class="stdimg"/>
+            </div>
+            <div title="{{item.studentFirstName}}">
+                {{item.studentFirstName}}
+            </div>
+            <div>{{item.firstterm}}</div>
+            <div>{{item.secondterm}}</div>
+    
+            <div>
+                {{item.classRoomName}}
+            </div>
+            <div class="actions">
+                <button (click)="showdetails(i)"><i class="fa-solid fa-display fa-2" style="color: #e7840e;"></i></button>
+                <button (click)="update(i)"><i class="fa-solid fa-edit fa-2" style="color: green;"></i></button>
+                <button (click)="delete(i)"><i class="fa-solid fa-trash fa-2" style="color: red;"></i></button>
+            </div>
+            </div>
+    </div>
+        
+</ng-container>
+<ng-container *ngIf="!loader&&allstudents.length==0">
+    <div class="notfoundbody">
+        Not Found
+    </div>
+</ng-container>

@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="container-wraperr">
+            <header>
+                    <div>
+                        Teacher Attandance
+                    </div>
+                    <div>
+                        <button (click)="close()"><i class="fa-solid fa-close"></i></button>
+                    </div>
+            </header>
+            <ng-container *ngIf="loader">
+                <app-loader></app-loader>
+            </ng-container>
+            <ng-container *ngIf="!loader">
+            <ng-container *ngIf="attendenceList.length>0">
+                    <div class="tableheader">
+                        <div>Teacher Name</div>
+                        <div>State</div>
+                        <div>Attendence</div>
+                    </div>
+                    <div class="data">
+                        <div *ngFor="let atten of attendenceList" class="tablebody">
+                            <div>{{atten.teacherName}}</div>
+                            <div>{{atten.state==true?'present':'absent'}}</div>
+                            <div><input type="checkbox" [(ngModel)]="atten.state" *ngIf="isBoolValue"></div>
+                        </div>
+                    </div>  
+                    <div class="save">
+                        <button (click)="save()">Save</button>
+                    </div>
+            </ng-container>        
+            <ng-container *ngIf="attendenceList.length==0">
+                    <div class="notfoundbody">
+                        Not Found
+                    </div>
+            </ng-container>
+            </ng-container>
+    </div>
+</div>

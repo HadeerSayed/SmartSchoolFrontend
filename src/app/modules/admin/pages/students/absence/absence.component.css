@@ -1,0 +1,66 @@
+.container-wraperr{
+    width: 60vw!important;
+    height: 50vh!important;
+}
+ .data{
+    height: 40vh!important;
+    overflow-y: auto;
+ }
+ .tablebody div:nth-child(1),
+  .tableheader div:nth-child(1)
+  {
+    width: 10%!important;
+  }
+  .tablebody div:nth-child(2),
+  .tableheader div:nth-child(2){
+    width: 20%!important;
+  }
+  .tablebody div:nth-child(3),
+  .tableheader div:nth-child(3),
+  .tablebody div:nth-child(4),
+  .tableheader div:nth-child(4),
+  .tablebody div:nth-child(6),
+  .tableheader div:nth-child(6){
+    width: calc(55% / 4)!important;
+  }
+  .tablebody div:nth-child(5),
+  .tableheader div:nth-child(5){
+    width: 35%;
+  }
+
+  .save{
+    text-align: right;
+    padding: 0 2rem;
+  }
+  .save button{
+    border-radius: 0;
+    background-color: green;
+    margin: 0 0.3rem;
+    padding: 0.7rem 1.6rem;
+    box-shadow: 1px 1px 1px 1px #0000004d;
+    border-radius: 10px;
+  }
+  header div:nth-child(2) button {
+    padding: 0.2rem 0!important;
+}
+@media (max-width:1200px){
+  .tableheader{
+    display: none!important;
+  }
+  .tablebody{
+    margin-top: 0.4rem!important;
+    display: block!important;
+  }
+  .tablebody div:nth-child(1),
+  .tablebody div:nth-child(2),
+  .tablebody div:nth-child(5),
+  .tablebody div:nth-child(6)
+  {
+    width: 100%!important;
+  }
+  .tablebody div:nth-child(3),
+  .tablebody div:nth-child(4){
+    display: inline-block;
+    width: 50%;
+  }
+}
